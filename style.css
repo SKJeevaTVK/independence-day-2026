@@ -11,7 +11,14 @@
 }
 
 body {
-    background-color: #050505;
+    /* Subtle Tricolor Blend Theme Background */
+    background: linear-gradient(
+        135deg, 
+        #120902 0%, 
+        #170e05 35%, 
+        #0b120d 70%, 
+        #041206 100%
+    );
     color: #ffffff;
     min-height: 100vh;
     display: flex;
@@ -25,8 +32,13 @@ body {
     max-width: 480px;
     min-height: 100vh;
     position: relative;
-    background: #080808;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    /* Soft ambient tricolor radial lights */
+    background: radial-gradient(circle at top, rgba(255, 153, 51, 0.12), transparent 45%),
+                radial-gradient(circle at bottom, rgba(19, 136, 8, 0.12), transparent 45%),
+                #0d0d0d;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 153, 51, 0.15);
+    border-left: 1px solid rgba(255, 153, 51, 0.25);
+    border-right: 1px solid rgba(19, 136, 8, 0.25);
     display: flex;
     flex-direction: column;
 }
@@ -84,7 +96,7 @@ body {
 .small-label {
     font-size: 12px;
     letter-spacing: 3px;
-    color: #888;
+    color: #aaa;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -111,7 +123,7 @@ h2 {
 
 .opening-text, .main-message, .final-message {
     font-size: 15px;
-    color: #aaa;
+    color: #ccc;
     line-height: 1.6;
     margin-bottom: 30px;
 }
@@ -127,7 +139,7 @@ h2 {
     border-radius: 30px;
     cursor: pointer;
     transition: transform 0.2s, background 0.2s;
-    box-shadow: 0 4px 15px rgba(255, 153, 51, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 153, 51, 0.35);
 }
 
 .main-btn:active, .next-btn:active {
@@ -144,7 +156,7 @@ h2 {
 .flag-pole {
     width: 6px;
     height: 220px;
-    background: linear-gradient(to bottom, #888, #444);
+    background: linear-gradient(to bottom, #aaa, #555);
     position: relative;
     border-radius: 3px;
 }
@@ -165,7 +177,7 @@ h2 {
     position: absolute;
     top: 10px;
     left: 6px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
 }
@@ -278,19 +290,20 @@ h2 {
 }
 
 .highlight-card {
-    background: #111;
-    border: 1px solid #222;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 12px 15px;
     border-radius: 10px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 15px;
+    backdrop-filter: blur(5px);
 }
 
 .highlight-card span { font-size: 22px; }
 .highlight-card strong { display: block; font-size: 14px; color: #fff; margin-bottom: 3px; }
-.highlight-card p { font-size: 12px; color: #888; margin: 0; }
+.highlight-card p { font-size: 12px; color: #aaa; margin: 0; }
 
 /* PAGE 4 QUIZ */
 .name-input-box {
@@ -309,7 +322,7 @@ h2 {
     padding: 12px 18px;
     border-radius: 25px;
     border: 1px solid #ff9933;
-    background: #111;
+    background: rgba(0, 0, 0, 0.4);
     color: #fff;
     font-size: 16px;
     text-align: center;
@@ -324,13 +337,13 @@ h2 {
 
 #questionNumber {
     font-size: 12px;
-    color: #888;
+    color: #aaa;
 }
 
 .progress-bar {
     width: 100%;
     height: 4px;
-    background: #222;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 2px;
     margin-top: 8px;
     overflow: hidden;
@@ -353,9 +366,9 @@ h2 {
     font-weight: 700;
 }
 
-.difficulty.basic { background: rgba(255, 153, 51, 0.2); color: #ff9933; }
+.difficulty.basic { background: rgba(255, 153, 51, 0.25); color: #ff9933; }
 .difficulty.intermediate { background: rgba(255, 255, 255, 0.2); color: #fff; }
-.difficulty.hard { background: rgba(19, 136, 8, 0.2); color: #138808; }
+.difficulty.hard { background: rgba(19, 136, 8, 0.3); color: #20e010; }
 
 .question-box h3 {
     font-size: 16px;
@@ -371,9 +384,9 @@ h2 {
 }
 
 .option {
-    background: #141414;
-    border: 1px solid #282828;
-    color: #ddd;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #eee;
     padding: 12px 16px;
     border-radius: 8px;
     font-size: 14px;
@@ -388,21 +401,21 @@ h2 {
 
 /* PAGE 5 CREATOR CARD */
 .final-flag { font-size: 40px; margin-bottom: 10px; }
-.final-divider { width: 50px; height: 1px; background: #333; margin: 25px auto; }
+.final-divider { width: 50px; height: 1px; background: rgba(255, 255, 255, 0.2); margin: 25px auto; }
 
 .creator-card {
-    background: linear-gradient(135deg, rgba(255, 153, 51, 0.1), rgba(19, 136, 8, 0.1));
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.15), rgba(19, 136, 8, 0.15));
     border: 1px solid #ff9933;
     padding: 20px 30px;
     border-radius: 16px;
     margin-top: 10px;
-    box-shadow: 0 0 20px rgba(255, 153, 51, 0.15);
+    box-shadow: 0 0 25px rgba(255, 153, 51, 0.2);
 }
 
 .creator-label {
     font-size: 11px;
     letter-spacing: 3px;
-    color: #888;
+    color: #aaa;
 }
 
 .creator-name {
@@ -411,12 +424,13 @@ h2 {
     color: #ff9933;
     letter-spacing: 4px;
     margin: 6px 0;
-    text-shadow: 0 0 12px rgba(255, 153, 51, 0.4);
+    text-shadow: 0 0 15px rgba(255, 153, 51, 0.5);
 }
 
 .creator-tag {
     font-size: 12px;
-    color: #138808;
+    color: #20e010;
     font-weight: 700;
     letter-spacing: 1px;
-}
+       }
+   
