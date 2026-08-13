@@ -294,5 +294,4 @@ function showQuizResult() {
         if (resultTitle) resultTitle.textContent = "GOOD TRY!";
         if (resultMessage) resultMessage.textContent = correctAnswers + "/9 — Keep learning more about our great nation!";
     }
-                                                                         }
-     
+}
