@@ -1,88 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Independence Day 2026</title>
+    <title>80th Independence Day 🇮🇳</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <main class="page">
+    <!-- =========================
+         BACKGROUND MUSIC
+    ========================== -->
 
-        <!-- Opening -->
-        <section class="screen opening-screen">
-
-            <p class="date">15 • 08 • 2026</p>
-
-            <h1>🇮🇳</h1>
-
-            <h2>INDEPENDENCE DAY</h2>
-
-            <p class="subtitle">
-                A day to remember. A day to be proud.
-            </p>
-
-            <button onclick="startExperience()">
-                BEGIN
-            </button>
-
-        </section>
+    <audio id="bgm" loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
 
 
-        <!-- Main -->
-        <section class="screen main-screen" id="mainScreen">
+    <!-- =========================
+         MUSIC CONTROL
+    ========================== -->
 
-            <div class="flag">
+    <button id="musicBtn"
+            class="music-btn"
+            onclick="toggleMusic()">
+        🔊
+    </button>
 
-                <div class="saffron"></div>
 
-                <div class="white">
-                    <div class="chakra">☸</div>
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
+
+    <main id="app">
+
+
+        <!-- =========================
+             PAGE 1 - OPENING
+        ========================== -->
+
+        <section id="page1" class="page active">
+
+            <div class="opening-content">
+
+                <p class="top-date">
+                    15 • 08 • 2026
+                </p>
+
+                <div class="india-symbol">
+                    🇮🇳
                 </div>
 
-                <div class="green"></div>
+                <p class="small-label">
+                    CELEBRATING
+                </p>
+
+                <h1>
+                    80th<br>
+                    INDEPENDENCE<br>
+                    DAY
+                </h1>
+
+                <p class="opening-text">
+                    A day to remember.<br>
+                    A nation to be proud of.
+                </p>
+
+                <button
+                    class="main-btn"
+                    onclick="startExperience()">
+                    BEGIN
+                </button>
 
             </div>
-
-            <h2>HAPPY INDEPENDENCE DAY</h2>
-
-            <p>
-                Celebrating freedom, unity and the spirit of India.
-            </p>
-
-            <button onclick="showFinal()">
-                CONTINUE
-            </button>
 
         </section>
 
 
-        <!-- Final -->
-        <section class="screen final-screen" id="finalScreen">
+        <!-- =========================
+             PAGE 2 - FLAG RAISING
+        ========================== -->
 
-            <div class="final-flag">🇮🇳</div>
+        <section id="page2" class="page">
 
-            <h2>JAI HIND</h2>
+            <div id="petals"></div>
 
-            <p class="final-date">
-                15 • 08 • 2026
-            </p>
+            <div class="flag-page">
 
-            <div class="credit">
-                A little creation by Jeeva,<br>
-                with pride 🇮🇳
+                <p class="small-label">
+                    A MOMENT OF PRIDE
+                </p>
+
+                <h2>
+                    RAISE THE FLAG
+                </h2>
+
+
+                <!-- Flag Pole -->
+
+                <div class="flag-area">
+
+                    <div class="flag-pole">
+
+                        <div class="flag-rope"></div>
+
+                        <div
+                            id="indianFlag"
+                            class="indian-flag">
+
+                            <div class="flag-stripe saffron"></div>
+
+                            <div class="flag-stripe white">
+
+                                <div class="chakra">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="flag-stripe green"></div>
+
+                        </div>
+
+                        <div class="pole-top"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Raise Button -->
+
+                <button
+                    id="raiseBtn"
+                    class="main-btn"
+                    onclick="raiseFlag()">
+
+                    RAISE THE FLAG 🇮🇳
+
+                </button>
+
+
+                <!-- Message after flag raising -->
+
+                <p
+                    id="flagMessage"
+                    class="flag-message">
+
+                    🇮🇳 Jai Hind 🇮🇳
+
+                </p>
+
+
+                <!-- Next Button -->
+
+                <button
+                    id="flagNextBtn"
+                    class="next-btn hidden"
+                    onclick="goToPage(3)">
+
+                    NEXT →
+
+                </button>
+
             </div>
 
         </section>
+
+
+        <!-- =========================
+             PAGE 3 - MESSAGE
+        ========================== -->
+
+        <section id="page3" class="page">
+
+            <div class="message-page">
+
+                <p class="small-label">
+                    15 • 08 • 2026
+                </p>
+
+                <h2>
+                    80th Independence Day
+                </h2>
+
+
+                <p class="main-message">
+
+                    Happy Independence Day, India! 🇮🇳
+
+                    <br><br>
+
+                    Today, we celebrate the freedom,
+                    unity and spirit of our nation.
+                    Let us remember the sacrifices
+                    that shaped our journey and look
+                    forward to building a better India.
+
+                </p>
+
+
+                <!-- Event Highlights -->
+
+                <div class="highlights">
+
+                    <h3>
+                        EVENT HIGHLIGHTS
+                    </h3>
+
+
+                    <div class="highlight-card">
+
+                        <span>🎵</span>
+
+                        <div>
+
+                            <strong>
+                                150 Years of Vande Mataram
+                            </strong>
+
+                            <p>
+                                Celebrating the historic legacy
+                                of Vande Mataram and its place
+                                in India's freedom journey.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight-card">
+
+                        <span>💡</span>
+
+                        <div>
+
+                            <strong>
+                                Youth & Innovation
+                            </strong>
+
+                            <p>
+                                Inspiring young minds through
+                                technology, innovation and
+                                participation towards
+                                Viksit Bharat @2047.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight-card">
+
+                        <span>🇮🇳</span>
+
+                        <div>
+
+                            <strong>
+                                Freedom & Unity
+                            </strong>
+
+                            <p>
+                                Celebrating the spirit of
+                                unity that brings our diverse
+                                nation together.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight-card">
+
+                        <span>🫡</span>
+
+                        <div>
+
+                            <strong>
+                                Remembering Our Heroes
+                            </strong>
+
+                            <p>
+                                Honouring the sacrifices of
+                                those who shaped India's
+                                journey to freedom.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight-card">
+
+                        <span>🚀</span>
+
+                        <div>
+
+                            <strong>
+                                Building Tomorrow
+                            </strong>
+
+                            <p>
+                                Looking ahead towards a
+                                stronger and developed India.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="next-btn"
+                    onclick="goToPage(4)">
+
+                    TAKE THE QUIZ →
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PAGE 4 - QUIZ
+        ========================== -->
+
+        <section id="page4" class="page">
+
+            <div class="quiz-page">
+
+                <p class="small-label">
+                    INDIA QUIZ
+                </p>
+
+                <h2>
+                    How Well Do You Know India?
+                </h2>
+
+
+                <!-- Progress -->
+
+                <div class="quiz-progress">
+
+                    <span id="questionNumber">
+                        Question 1 / 9
+                    </span>
+
+                    <div class="progress-bar">
+
+                        <div
+                            id="progressFill">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Difficulty -->
+
+                <div id="difficulty"
+                     class="difficulty basic">
+
+                    BASIC
+
+                </div>
+
+
+                <!-- Question -->
+
+                <div class="question-box">
+
+                    <h3 id="questionText">
+                        Question will appear here
+                    </h3>
+
+
+                    <div
+                        id="options"
+                        class="options">
+
+                    </div>
+
+                </div>
+
+
+                <!-- Next Question -->
+
+                <button
+                    id="quizNextBtn"
+                    class="next-btn quiz-next hidden"
+                    onclick="nextQuestion()">
+
+                    NEXT →
+
+                </button>
+
+
+                <!-- Quiz Result -->
+
+                <div
+                    id="quizResult"
+                    class="quiz-result hidden">
+
+                    <div
+                        id="resultIcon">
+                        🇮🇳
+                    </div>
+
+                    <h2 id="resultTitle">
+                        Quiz Completed!
+                    </h2>
+
+                    <p id="resultMessage">
+                        Thank you for taking the challenge.
+                    </p>
+
+                    <button
+                        class="next-btn"
+                        onclick="goToPage(5)">
+
+                        CONTINUE →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PAGE 5 - THANK YOU
+        ========================== -->
+
+        <section id="page5" class="page">
+
+            <div class="final-page">
+
+                <div class="final-flag">
+                    🇮🇳
+                </div>
+
+                <p class="small-label">
+                    15 • 08 • 2026
+                </p>
+
+                <h2>
+                    THANK YOU
+                </h2>
+
+                <p class="final-message">
+
+                    Thank you for celebrating
+                    the spirit of India. 🇮🇳
+
+                    <br><br>
+
+                    May the colours of our flag
+                    always remind us of freedom,
+                    unity and hope.
+
+                </p>
+
+
+                <div class="final-divider"></div>
+
+
+                <p class="credit">
+
+                    A little creation by Jeeva,<br>
+
+                    <span>
+                        with pride 🇮🇳
+                    </span>
+
+                </p>
+
+
+                <p class="tech-credit">
+
+                    HTML • CSS • JavaScript
+
+                </p>
+
+            </div>
+
+        </section>
+
 
     </main>
 
 
+    <!-- JavaScript -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
