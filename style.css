@@ -1,37 +1,422 @@
-/* Base & Global Styles */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background-color: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+/* =========================================
+   INDEPENDENCE DAY 2026 - STYLES
+   Created for Jeeva 🇮🇳
+========================================= */
 
-.page { display: none; padding: 20px; min-height: 100vh; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-.page.active { display: flex; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 
-.hidden { display: none !important; }
+body {
+    background-color: #050505;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
 
-/* Rotating Ashoka Chakra */
+#app {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    position: relative;
+    background: #080808;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+}
+
+/* PAGES */
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    min-height: 100vh;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.page.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* MUSIC BUTTON */
+.music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+/* TYPOGRAPHY & BUTTONS */
+.top-date {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #ff9933;
+    margin-bottom: 20px;
+}
+
+.small-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #888;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.india-symbol {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.opening-text, .main-message, .final-message {
+    font-size: 15px;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.main-btn, .next-btn {
+    background: #ff9933;
+    color: #000;
+    font-weight: 700;
+    border: none;
+    padding: 14px 36px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 153, 51, 0.3);
+}
+
+.main-btn:active, .next-btn:active {
+    transform: scale(0.96);
+}
+
+/* PAGE 2 FLAG ANIMATIONS */
+.flag-area {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.flag-pole {
+    width: 6px;
+    height: 220px;
+    background: linear-gradient(to bottom, #888, #444);
+    position: relative;
+    border-radius: 3px;
+}
+
+.pole-top {
+    width: 14px;
+    height: 14px;
+    background: #ffd166;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    left: -4px;
+}
+
+.indian-flag {
+    width: 140px;
+    height: 90px;
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.flag-stripe {
+    flex: 1;
+    width: 100%;
+}
+
+.saffron { background-color: #FF9933; }
+.white { 
+    background-color: #FFFFFF; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.green { background-color: #138808; }
+
+.chakra {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid #000080;
+    border-radius: 50%;
+    position: relative;
+}
+
 .chakra.rotating {
-    animation: rotateChakra 10s linear infinite;
+    animation: rotateChakra 12s linear infinite;
 }
+
 @keyframes rotateChakra {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-/* User Input Field */
-.user-info-box { margin-top: 20px; display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
-.user-info-box input { padding: 12px; border-radius: 8px; border: 1px solid #ff9933; background: #111; color: #fff; font-size: 16px; text-align: center; }
-
-/* Buttons & Styling */
-.main-btn, .next-btn { background: #ff9933; color: #000; font-weight: bold; padding: 12px 28px; border: none; border-radius: 25px; cursor: pointer; font-size: 16px; margin-top: 20px; }
-
-/* Highlighted Creator Box for Page 5 */
-.creator-box {
-    background: linear-gradient(135deg, rgba(255,153,51,0.1), rgba(19,136,8,0.1));
-    border: 2px solid #ff9933;
-    padding: 25px 35px;
-    border-radius: 15px;
-    margin-top: 30px;
-    box-shadow: 0 0 20px rgba(255, 153, 51, 0.3);
+.chakra span {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000080;
+    top: 50%;
+    left: 0;
 }
-.creator-title { font-size: 14px; letter-spacing: 2px; color: #aaa; text-transform: uppercase; }
-.creator-name { font-size: 32px; color: #ff9933; letter-spacing: 3px; font-weight: 800; text-shadow: 0 0 10px rgba(255,153,51,0.5); margin: 5px 0; }
-.creator-badge { display: inline-block; background: #138808; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+
+.chakra span:nth-child(1) { transform: rotate(0deg); }
+.chakra span:nth-child(2) { transform: rotate(30deg); }
+.chakra span:nth-child(3) { transform: rotate(60deg); }
+.chakra span:nth-child(4) { transform: rotate(90deg); }
+.chakra span:nth-child(5) { transform: rotate(120deg); }
+.chakra span:nth-child(6) { transform: rotate(150deg); }
+
+.indian-flag.flying {
+    animation: flagWave 2s ease-in-out infinite alternate;
+    transform-origin: left center;
+}
+
+@keyframes flagWave {
+    0% { transform: skewY(0deg) scaleY(1); }
+    100% { transform: skewY(3deg) scaleY(1.02); }
+}
+
+.flag-message {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff9933;
+    letter-spacing: 2px;
+}
+
+.flag-message.show {
+    opacity: 1;
+}
+
+/* PETALS / FLOWERS */
+#petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.petal {
+    position: absolute;
+    top: -20px;
+    border-radius: 10px 0 10px 0;
+    animation: petalFall linear forwards;
+}
+
+@keyframes petalFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* PAGE 3 HIGHLIGHTS */
+.highlights {
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.highlights h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #ff9933;
+    margin-bottom: 15px;
+}
+
+.highlight-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.highlight-card span { font-size: 22px; }
+.highlight-card strong { display: block; font-size: 14px; color: #fff; margin-bottom: 3px; }
+.highlight-card p { font-size: 12px; color: #888; margin: 0; }
+
+/* PAGE 4 QUIZ */
+.name-input-box {
+    margin: 30px 0;
+    width: 100%;
+}
+
+.input-label {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.name-input-box input {
+    width: 80%;
+    padding: 12px 18px;
+    border-radius: 25px;
+    border: 1px solid #ff9933;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.quiz-progress {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#questionNumber {
+    font-size: 12px;
+    color: #888;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    background: #ff9933;
+    transition: width 0.3s ease;
+}
+
+.difficulty {
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.difficulty.basic { background: rgba(255, 153, 51, 0.2); color: #ff9933; }
+.difficulty.intermediate { background: rgba(255, 255, 255, 0.2); color: #fff; }
+.difficulty.hard { background: rgba(19, 136, 8, 0.2); color: #138808; }
+
+.question-box h3 {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.option {
+    background: #141414;
+    border: 1px solid #282828;
+    color: #ddd;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.option.correct { background: #138808 !important; color: #fff !important; border-color: #138808 !important; }
+.option.wrong { background: #d90429 !important; color: #fff !important; border-color: #d90429 !important; }
+.option.disabled { pointer-events: none; }
+
+/* PAGE 5 CREATOR CARD */
+.final-flag { font-size: 40px; margin-bottom: 10px; }
+.final-divider { width: 50px; height: 1px; background: #333; margin: 25px auto; }
+
+.creator-card {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.1), rgba(19, 136, 8, 0.1));
+    border: 1px solid #ff9933;
+    padding: 20px 30px;
+    border-radius: 16px;
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(255, 153, 51, 0.15);
+}
+
+.creator-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #888;
+}
+
+.creator-name {
+    font-size: 32px;
+    font-weight: 900;
+    color: #ff9933;
+    letter-spacing: 4px;
+    margin: 6px 0;
+    text-shadow: 0 0 12px rgba(255, 153, 51, 0.4);
+}
+
+.creator-tag {
+    font-size: 12px;
+    color: #138808;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
