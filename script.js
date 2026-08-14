@@ -4,7 +4,7 @@ function setProgress(percent) {
 
 function wrongAnswer() {
   const errorMsg = document.getElementById('error-msg');
-  errorMsg.innerText = "Adada! History Class-la Kavanippala Pola? Try Again! 😜";
+  errorMsg.innerText = "Adada! History Class-la Kavanikala Pola? Try Again! 😜";
 }
 
 function correctStage1() {
@@ -21,7 +21,7 @@ function goToStage3() {
 
 function hoistFlag() {
   const flag = document.getElementById('flag');
-  flag.style.bottom = '90px'; // Flag Up Animation
+  flag.style.bottom = '110px'; // Slow smooth flag raise
 
   setTimeout(() => {
     document.getElementById('stage3').classList.remove('active');
@@ -36,4 +36,15 @@ function hoistFlag() {
       colors: ['#FF9933', '#FFFFFF', '#138808']
     });
   }, 2200);
+}
+
+function generateBadge() {
+  const name = document.getElementById('userName').value;
+  if(name.trim() !== "") {
+    document.getElementById('displayName').innerText = "🎖️ " + name;
+    document.getElementById('nameInputSection').style.display = "none";
+    document.getElementById('badgeCard').classList.remove('hidden');
+  } else {
+    alert("Dayavusenju unnga name enter pannunga!");
+  }
 }
