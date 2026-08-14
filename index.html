@@ -29,7 +29,7 @@
     <!-- STAGE 2: NOSTALGIA MEMORY -->
     <div class="stage" id="stage2">
       <h2>🎒 Stage 2: School Nostalgia Check</h2>
-      <p>August 15 Morning 7 AM-ku School-la Line-la Ninnu 2 Sweets/Chocolate Vaanguna Fun Moments Nyabagam Irukka?</p>
+      <p>August 15 Morning School-la Sweets / Chocolate-kkaga 2-vathu murai line-la ninnu maattunadhu nyabagam irukkaa? 😂</p>
       <div class="memory-box">
         <p><i>"Siru Vayadhil August 15 Naale Sweets & Ground Drill Fun Dhaan!"</i></p>
       </div>
@@ -44,7 +44,27 @@
         <div class="pole"></div>
         <div class="flag" id="flag">
           <div class="saffron"></div>
-          <div class="white"><div class="chakra">☸</div></div>
+          <div class="white">
+            <div class="chakra">
+              <svg viewBox="0 0 100 100" width="28" height="28">
+                <circle cx="50" cy="50" r="40" stroke="navy" stroke-width="2" fill="none" />
+                <g stroke="navy" stroke-width="1">
+                  <line x1="50" y1="10" x2="50" y2="90" />
+                  <line x1="10" y1="50" x2="90" y2="50" />
+                  <g transform="rotate(15 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                  <g transform="rotate(30 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                  <g transform="rotate(45 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                  <g transform="rotate(60 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                  <g transform="rotate(75 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                  <g transform="rotate(105 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                  <g transform="rotate(120 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                  <g transform="rotate(135 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                  <g transform="rotate(150 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                  <g transform="rotate(165 50 50)"><line x1="50" y1="10" x2="50" y2="90" /></g>
+                </g>
+              </svg>
+            </div>
+          </div>
           <div class="green"></div>
         </div>
       </div>
@@ -54,15 +74,26 @@
     <!-- FINAL STAGE: SURPRISE & SMILE -->
     <div class="stage" id="stage4">
       <h1>🎉 Happy Independence Day! 🎉</h1>
-      <div class="badge">🏆 Certified Freedom Master - 2026</div>
       
-      <div class="smile-card">
-        <p>"Inaiku Naattu Pattu Irruko Illaiyo..."</p>
-        <h3>"Naalaki Off / Leave Kedaichudhu Nu Oru Santhosham Irukke... Adhu Dhaan Real Freedom! 😜✨"</h3>
+      <div id="nameInputSection">
+        <p>Unnga Name Enter Pannunga Badge Create Panna:</p>
+        <input type="text" id="userName" placeholder="Enter your name..." class="name-input">
+        <br>
+        <button onclick="generateBadge()">Get Freedom Pass 🎖️</button>
       </div>
 
-      <p class="final-wish">Wishing you and your family a Happy Independence Day! Spread Joy & Positivity! 🚀</p>
-      <button class="restart-btn" onclick="location.reload()">Play Again 🔄</button>
+      <div id="badgeCard" class="hidden" style="margin-top: 15px;">
+        <div class="badge">🏆 Certified Freedom Master - 2026</div>
+        <h2 id="displayName" style="color: #ff9933; margin: 10px 0;"></h2>
+        
+        <div class="smile-card">
+          <p>"Inaiku Naattu Pattu Irruko Illaiyo..."</p>
+          <h3>"Naalaki Off / Leave Kedaichudhu Nu Oru Santhosham Irukke... Adhu Dhaan Real Freedom! 😜✨"</h3>
+        </div>
+        <p style="font-size: 0.8rem; color: #94a3b8;">Take a screenshot and share it with me! 📸</p>
+      </div>
+
+      <button class="restart-btn" onclick="location.reload()" style="margin-top: 20px;">Play Again 🔄</button>
     </div>
 
   </div>
