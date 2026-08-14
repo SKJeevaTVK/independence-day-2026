@@ -1,28 +1,39 @@
-let step = 0;
-
-function openCard() {
-  document.querySelector('.card-front').classList.add('hidden');
-  document.getElementById('content').classList.remove('hidden');
+function setProgress(percent) {
+  document.getElementById('progress').style.width = percent + '%';
 }
 
-function checkColor(color) {
-  const order = ['saffron', 'white', 'green'];
-  if (color === order[step]) {
-    step++;
-    if (step === 3) {
-      document.querySelector('.game-box').classList.add('hidden');
-      document.getElementById('finalMessage').classList.remove('hidden');
-      
-      // Tricolor Confetti Blast
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#FF9933', '#FFFFFF', '#138808']
-      });
-    }
-  } else {
-    alert("Ops! Order maathi click pannitinga, Saffron -> White -> Green sequence try pannunga! 😊");
-    step = 0;
-  }
+function wrongAnswer() {
+  const errorMsg = document.getElementById('error-msg');
+  errorMsg.innerText = "Adada! History Class-la Kavanippala Pola? Try Again! 😜";
+}
+
+function correctStage1() {
+  document.getElementById('stage1').classList.remove('active');
+  document.getElementById('stage2').classList.add('active');
+  setProgress(50);
+}
+
+function goToStage3() {
+  document.getElementById('stage2').classList.remove('active');
+  document.getElementById('stage3').classList.add('active');
+  setProgress(75);
+}
+
+function hoistFlag() {
+  const flag = document.getElementById('flag');
+  flag.style.bottom = '90px'; // Flag Up Animation
+
+  setTimeout(() => {
+    document.getElementById('stage3').classList.remove('active');
+    document.getElementById('stage4').classList.add('active');
+    setProgress(100);
+
+    // Confetti Blast Effect
+    confetti({
+      particleCount: 120,
+      spread: 80,
+      origin: { y: 0.6 },
+      colors: ['#FF9933', '#FFFFFF', '#138808']
+    });
+  }, 2200);
 }
