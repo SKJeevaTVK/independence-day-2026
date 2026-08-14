@@ -1,35 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Independence Day!</title>
+  <title>Independence Day Freedom Quest 🇮🇳</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container" id="mainCard">
-    <div class="card-front" onclick="openCard()">
-      <h1>🇮🇳 Tap to Open Your Surprise 🎁</h1>
+
+  <div class="quest-container">
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
     </div>
 
-    <div class="card-content hidden" id="content">
-      <h2>Happy Independence Day! 🎉</h2>
-      <p>Unnga pathi oru chinna Fun Test... Ready-a?</p>
+    <!-- STAGE 1: RIDDLE LOCK -->
+    <div class="stage active" id="stage1">
+      <h2>🔒 Stage 1: Security Check</h2>
+      <p class="question">Namma Indian Flag-la irukkura Ashoka Chakra-la evlo Spokes irukku?</p>
+      <div class="options">
+        <button onclick="wrongAnswer()">18 Spokes</button>
+        <button onclick="wrongAnswer()">20 Spokes</button>
+        <button onclick="correctStage1()">24 Spokes</button>
+        <button onclick="wrongAnswer()">30 Spokes</button>
+      </div>
+      <p id="error-msg" class="error-text"></p>
+    </div>
+
+    <!-- STAGE 2: NOSTALGIA MEMORY -->
+    <div class="stage" id="stage2">
+      <h2>🎒 Stage 2: School Nostalgia Check</h2>
+      <p>August 15 Morning 7 AM-ku School-la Line-la Ninnu 2 Sweets/Chocolate Vaanguna Fun Moments Nyabagam Irukka?</p>
+      <div class="memory-box">
+        <p><i>"Siru Vayadhil August 15 Naale Sweets & Ground Drill Fun Dhaan!"</i></p>
+      </div>
+      <button class="next-btn" onclick="goToStage3()">Aama, Vera Level Memories! ❤️ (Next)</button>
+    </div>
+
+    <!-- STAGE 3: FLAG HOISTING -->
+    <div class="stage" id="stage3">
+      <h2>🇮🇳 Stage 3: Hoist The Flag</h2>
+      <p>Tap the button below to hoist the Indian National Flag!</p>
+      <div class="flag-pole-area">
+        <div class="pole"></div>
+        <div class="flag" id="flag">
+          <div class="saffron"></div>
+          <div class="white"><div class="chakra">☸</div></div>
+          <div class="green"></div>
+        </div>
+      </div>
+      <button class="hoist-btn" onclick="hoistFlag()">🚩 Hoist Flag</button>
+    </div>
+
+    <!-- FINAL STAGE: SURPRISE & SMILE -->
+    <div class="stage" id="stage4">
+      <h1>🎉 Happy Independence Day! 🎉</h1>
+      <div class="badge">🏆 Certified Freedom Master - 2026</div>
       
-      <!-- Mini Game Section -->
-      <div class="game-box">
-        <p>Correct Order-la Colors Grid Select Pannunga:</p>
-        <div class="color-btn saffron" onclick="checkColor('saffron')"></div>
-        <div class="color-btn white" onclick="checkColor('white')"></div>
-        <div class="color-btn green" onclick="checkColor('green')"></div>
+      <div class="smile-card">
+        <p>"Inaiku Naattu Pattu Irruko Illaiyo..."</p>
+        <h3>"Naalaki Off / Leave Kedaichudhu Nu Oru Santhosham Irukke... Adhu Dhaan Real Freedom! 😜✨"</h3>
       </div>
 
-      <div id="finalMessage" class="hidden">
-        <h3>✨ You're a True Patriot! ✨</h3>
-        <p class="smile-quote">"Freedom in mind, Faith in words, Pride in our heart!"</p>
-        <p>Wishing you and your family a great 15th August! 🚀</p>
-      </div>
+      <p class="final-wish">Wishing you and your family a Happy Independence Day! Spread Joy & Positivity! 🚀</p>
+      <button class="restart-btn" onclick="location.reload()">Play Again 🔄</button>
     </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
